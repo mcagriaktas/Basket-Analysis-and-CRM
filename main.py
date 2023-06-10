@@ -324,37 +324,8 @@ def most_40_words():
     plt.show()
 
 
-"""------------------- Final Result  --------------------------------------"""
-"""
-Açıklama: 
-Veri setinde Invoice incelendiğinde, bir kişinin fatura id'si ile neler aldığını
-görebiliriz. Dolayısıyla, kaç unique invoice varsa, o kadar müşteri vardır, demek.
-ÖRNEK = mesela ilk okumam da bu kısımı yanlış okumuşum. Çünkü, bir müşterinin birden fazla---
-faturası olabilirmiş. Frekans hesaplamalarında örneğin, müşterinin iki faturasında X ürünü olsun---
-biz iki faturanın içindeki X ürününü 1 olarak kabul ediyoruz. Bunun sebebi, kombinasyonu bozmamak için---
-çünkü müşteriye dayalıbir analiz yapıyoruz. Yapmasak farklı olurdu.
 
-Genel okumalar yapıldıktan sonra, null_values fonksiyonu çalıştırılır.
-Eksik bilgiler ya doldurulur ya da silinir.
-Customer ID, özel ve tekil olduğu için doldurulamaz ve o satırlar silinir.
-description ise benzer ürünlerin açıklamaları yazılabilir ama şimdilik siliyoruz.
-Not: Duruma bağlı olarak, description'lara benzer ürünlerin açıklamaları da ---
-yazılabilir. Analize göre bu değerlendirilmelidir.
 
-Ardından hasılatı hesaplarken, faturalarda geri iadeler vardır. Bunlar örneğin ---
-"C489449" faturalar sütununda C ile gösteriliyor. Bu iadeler fiyatta negatif ---
-olarak gösterildiği için hastılat hesaplanırken, toplam pozitif gelirden ---
-negatifler çıkınca, anlamsız bi' gider çıkıyor. Bu yüzden geri iadelerin ---
-hepsi silinmelidir, ki hasılatı hesaplayabilelim.
-
-Sepet analizde önce fatura ve açıklama gruplandırılıp, miktarları hesaplanıyor. 
-ardından açıklamaları sütuna çevirip, satılarda fatura id sini tutarak, faturada alınan---
-ürünlerin değer 1, alınmayan ürünlerin değer 0 olarak çıkıyor. 
-
-frequent_itemsets değişkeninde min_sup değerini 0.1 yaparsak, 33 değer gelir, 0.01 yaparsak 8174 değer---
-gelir. Dolayısıyla, min_support değerini küçültmek pek sağlıklı değildir.---
-Neden çünkü 8152.  satırda, %1.5 oranla 3 ürün birlikte alınabilir, deniyor.---
-yani %1.5 oran, sağlıklı çıkmaz. (Müdür kahkaha atar yani bunu görse :D )
 
 Yanlışlıkla da olsa, Fransa için tüm ürünleri incelerken, bazı ürünlerin yanında POSTAGE---
 diye bir ürün de alınıyormuş. Burada şu anlaşıyorki, online alınan ürünleri de çıkarmış oluyoruz.
