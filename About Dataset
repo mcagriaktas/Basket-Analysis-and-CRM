@@ -1,0 +1,26 @@
+When examining the Invoice column in the dataset, we can see what a person has purchased with their invoice ID. Therefore, the number of unique invoices corresponds to the 
+number of customers. For example, in my initial reading, I misunderstood this part. It turns out that a customer can have multiple invoices. In frequency calculations, for 
+instance, if a customer has the product X in two invoices, we consider the occurrence of X as 1. We do this to preserve combinations since we are conducting an analysis based 
+on customers. If we didn't do this, the result would be different.
+
+After general readings, the null_values function is executed. Missing data is either filled or deleted. Customer ID, being unique and specific, cannot be filled, so those rows 
+are deleted. As for the description, similar products' descriptions can be written, but for now, we are deleting them. Note: Depending on the situation, descriptions of similar
+products can be written. This should be evaluated based on the analysis.
+
+Next, when calculating revenue, there are returns in the invoices. These returns are indicated by 'C' in the 'Invoice' column, for example, 'C489449'. Since returns are 
+represented as negative values in the price, when calculating revenue, if we subtract the negatives from the total positive revenue, it leads to an illogical expense. 
+Therefore, all returns must be deleted in order to calculate the revenue accurately.
+
+In the basket analysis, the invoices and descriptions are first grouped, and the quantities are calculated. Then, the descriptions are transformed into columns, with the 
+invoice ID kept, and the value 1 is assigned to the products purchased in the invoice, while the value 0 is assigned to the products not purchased.
+
+If we set the min_sup value as 0.1 in the frequent_itemsets variable, it returns 33 values. If we set it as 0.01, it returns 8174 values. Thus, reducing the min_support value 
+is not very reliable. Because in 8152 rows, it is suggested that 3 products can be purchased together with a 1.5% ratio. Therefore, a 1.5% ratio is not accurate. 
+(The manager would burst into laughter if they saw this :D)
+
+Accidentally or not, when examining all the products for France, there is a product called POSTAGE that is also being purchased. It becomes apparent that we are excluding 
+online purchased products as well. However, this contradicts the purpose of analyzing the products. Therefore, we calculate the SUPPORT and CONFIDENCE without considering 
+the POSTAGE lines. This process can actually lead to interesting analyses, but I am not examining it in detail at the moment.
+
+We also subject the dataset to outlier analysis. During the cleaning process, strange values around 850 pounds keep appearing. We determine these outliers using probability 
+statistics and two functions, and then clean them up.
