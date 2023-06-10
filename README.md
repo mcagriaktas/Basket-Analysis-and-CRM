@@ -13,3 +13,6 @@ Thank you
 
 SOURCE:
 https://clevertap.com/blog/rfm-analysis/
+
+Dataset:
+https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci
