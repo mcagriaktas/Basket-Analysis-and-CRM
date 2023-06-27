@@ -324,16 +324,3 @@ def most_40_words():
     plt.show()
 
 
-
-
-
-Yanlışlıkla da olsa, Fransa için tüm ürünleri incelerken, bazı ürünlerin yanında POSTAGE---
-diye bir ürün de alınıyormuş. Burada şu anlaşıyorki, online alınan ürünleri de çıkarmış oluyoruz.
-Tabii bunlar bir anlamda da ürünleri incelememize karşı çıkıyor. Bu yüzden POSTAGE satırlarını---
-SUPPORT ve CONFIDENCE hesaplarken dikkate almadan hesaplıyoruz. Bu işlemde aslında güzel analizler---
-çıkabilir ama şuan için çok irdelemiyorum.
-
-Veri setindeki aykırı değerleri de temizlik işlemine sokuyoruz. Çünkü temizleme işleminde tüm parametleri---
-sağlayıp arada 850 sterlin civarında garip garip ücretler çıkıyor. Bunların olasılık-istatistiklik bilgi---
-bilgisiyle, iki fonksiyon yardımı kullanarak belirleyip, temizliyoruz. 
-"""
