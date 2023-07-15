@@ -108,9 +108,6 @@ df_country = df[df['Country'] == country]
 freq = df_country.groupby(['Invoice', 'Description'])['Quantity'].sum()
 prod_freq = freq.unstack().fillna(0).reset_index().set_index('Invoice')
 
-
-
-
 """--------------------- Basket Analysis's Apriori Codes -----------------"""
 
 def apriori():
@@ -174,9 +171,7 @@ def RFM():
 
 
 """---------------------- Simple Solution Program -------------------------"""
-
-
-"""------ Data Base (Example)------------------------------------------- """
+"""---------------------- Data Base (Example)----------------------------- """
 def program():
     import datetime as dt
     import matplotlib.pyplot as plt
