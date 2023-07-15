@@ -102,9 +102,6 @@ def outliner_cleaning():
 
 outliner_cleaning()
 
-print(df['Invoice'].nunique())
-print(df['Description'].nunique())
-print(df['Customer ID'].nunique())
 
 country = 'France'
 df_country = df[df['Country'] == country]
